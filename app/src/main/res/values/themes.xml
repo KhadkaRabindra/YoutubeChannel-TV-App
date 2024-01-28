@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.ShowBiz" parent="Theme.AppCompat.DayNight.NoActionBar" />
+</resources>
