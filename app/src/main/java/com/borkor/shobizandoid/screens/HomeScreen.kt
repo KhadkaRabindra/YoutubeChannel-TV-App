@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -68,54 +70,58 @@ fun HomeScreen(
                 }
             }
         ) { innerPadding ->
-            Column(
-                modifier = Modifier
-                    .background(Gray93)
-                    .padding(innerPadding),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            Box {
                 Column(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .weight(1f),
+                        .background(Gray93)
+                        .padding(innerPadding),
                     verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(
+                    Column(
                         modifier = Modifier
-                            .wrapContentSize()
-                            .padding(start = 30.dp, end = 30.dp)
-                            .clickable(
-                                interactionSource = remember { MutableInteractionSource() },
-                                indication = rememberRipple(color = Color.Blue)
-                            ) {
-                                navigateToWebView()
-                            },
-                        painter = painterResource(id = R.drawable.webview_banner),
-                        contentDescription = stringResource(id = R.string.shzbiz_icon_description),
-                    )
+                            .fillMaxSize()
+                            .weight(1f),
+                        verticalArrangement = Arrangement.Center,
+                    ) {
+                        Image(
+                            modifier = Modifier
+                                .wrapContentSize()
+                                .padding(start = 30.dp, end = 30.dp)
+                                .clickable(
+                                    interactionSource = remember { MutableInteractionSource() },
+                                    indication = rememberRipple(color = Color.Blue)
+                                ) {
+                                    navigateToWebView()
+                                },
+                            painter = painterResource(id = R.drawable.webview_banner),
+                            contentDescription = stringResource(id = R.string.shzbiz_icon_description),
+                        )
+                    }
+
+
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .weight(1f),
+                        verticalArrangement = Arrangement.Center,
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .padding(start = 30.dp, end = 30.dp),
+                            color = Color.Black,
+                            fontSize = 24.sp,
+                            text = stringResource(id = R.string.videos_and_more),
+                            fontFamily = inriaSansFamily, fontWeight = FontWeight.Normal,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+
+                        MoreVideosScreen(videoViewModel, navigateToYoutubeView)
+                    }
                 }
 
-
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .weight(1f),
-                    verticalArrangement = Arrangement.Center,
-                ) {
-                    Text(
-                        modifier = Modifier
-                            .padding(start = 30.dp, end = 30.dp),
-                        color = Color.Black,
-                        fontSize = 24.sp,
-                        text = stringResource(id = R.string.videos_and_more),
-                        fontFamily = inriaSansFamily, fontWeight = FontWeight.Normal,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
-                    )
-
-                    MoreVideosScreen(videoViewModel, navigateToYoutubeView)
-                }
+                InterstitialAdsScreen(LocalContext.current, modifier = Modifier.padding(innerPadding))
             }
         }
     }

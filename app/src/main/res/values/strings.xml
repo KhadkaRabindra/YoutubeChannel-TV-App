@@ -1,4 +1,6 @@
 <resources>
+    <string name="google_ads_id">ca-app-pub-9857474328493181~6435138107</string>
+    <string name="interstitial_ads_id">ca-app-pub-9857474328493181/2304321402</string>
     <string name="app_name">Shobiz TV</string>
     <string name="shzbiz_icon_description">SHZBiz Icon</string>
     <string name="homepage">Homepage</string>

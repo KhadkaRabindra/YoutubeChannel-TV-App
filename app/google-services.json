@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "218462563999",
+    "project_id": "shobiz-tv",
+    "storage_bucket": "shobiz-tv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218462563999:android:67e1048daf3c5cf88bfcaa",
+        "android_client_info": {
+          "package_name": "com.borkor.shobizandoid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218462563999-74u0svkdg6cleo3r5bl48fsc2g4lig2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6eNuqMq_5fdfGK2VlGvyqWqBuyjCNKRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218462563999-74u0svkdg6cleo3r5bl48fsc2g4lig2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218462563999:android:8c365e19dff2c4478bfcaa",
+        "android_client_info": {
+          "package_name": "com.borkor.shobiztv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218462563999-74u0svkdg6cleo3r5bl48fsc2g4lig2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6eNuqMq_5fdfGK2VlGvyqWqBuyjCNKRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218462563999-74u0svkdg6cleo3r5bl48fsc2g4lig2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

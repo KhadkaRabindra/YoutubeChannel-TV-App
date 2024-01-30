@@ -12,6 +12,8 @@ import androidx.tv.material3.Surface
 import com.borkor.shobizandoid.screens.MainScreen
 import com.borkor.shobizandoid.screens.VideosViewModel
 import com.borkor.shobizandoid.ui.theme.ShowBizTheme
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +23,14 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalTvMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        MobileAds.initialize(this)
+        val configuration = RequestConfiguration.Builder()
+            //.setTestDeviceIds(Collections.singletonList("775EC382F63089447F3FA3C657F9FEBA"))
+            .setTestDeviceIds(listOf("775EC382F63089447F3FA3C657F9FEBA"))
+            .build()
+        MobileAds.setRequestConfiguration(configuration)
+
         setContent {
             ShowBizTheme {
                 Surface(
