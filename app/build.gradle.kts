@@ -159,8 +159,10 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
     implementation("com.google.firebase:firebase-analytics")
-
     implementation ("com.google.android.gms:play-services-ads:22.6.0")
+    implementation ("com.parse:parse-android:1.17.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
