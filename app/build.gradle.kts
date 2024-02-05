@@ -14,8 +14,8 @@ android {
         applicationId = "com.borkor.shobizandoid"
         minSdk = 21
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.3"
+        versionCode = 6
+        versionName = "1.5"
         vectorDrawables {
             useSupportLibrary = true
         }
