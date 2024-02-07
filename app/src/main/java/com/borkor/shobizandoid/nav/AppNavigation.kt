@@ -1,8 +1,8 @@
 package com.borkor.shobizandoid.nav
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.DrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -10,12 +10,11 @@ import com.borkor.shobizandoid.screens.AboutScreen
 import com.borkor.shobizandoid.screens.HelpAndFeedbackScreen
 import com.borkor.shobizandoid.screens.HomeScreen
 import com.borkor.shobizandoid.screens.PrivacyScreen
-import com.borkor.shobizandoid.screens.SystemUpdateScreen
 import com.borkor.shobizandoid.screens.VideosViewModel
 import com.borkor.shobizandoid.screens.WebViewScreen
 import com.borkor.shobizandoid.screens.YoutubeScreen
-import com.borkor.shobizandoid.utils.openAppPlayStore
-import java.lang.reflect.Modifier
+import com.borkor.shobizandoid.screens.YoutubeVideoPlayer
+import androidx.compose.ui.Modifier
 
 @Composable
 fun AppNavigation(
@@ -41,9 +40,11 @@ fun AppNavigation(
                     Screens.WebViewScreen -> WebViewScreen()
                     Screens.YoutubeScreen -> {
                         val videoID = it.arguments?.getString("videoID")
-                        YoutubeScreen(
+                        YoutubeVideoPlayer(modifier = Modifier,
                             videoId = videoID.orEmpty(),
-                            modifier = Modifier()
+                            isPlaying = {},
+                            isLoading = {},
+                            onVideoEnded = {}
                         )
                     }
 
