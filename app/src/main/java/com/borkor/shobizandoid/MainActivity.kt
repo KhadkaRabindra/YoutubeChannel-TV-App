@@ -5,6 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.tv.material3.ExperimentalTvMaterial3Api
@@ -12,13 +15,12 @@ import androidx.tv.material3.Surface
 import com.borkor.shobizandoid.screens.ErrorScreen
 import com.borkor.shobizandoid.screens.MainScreen
 import com.borkor.shobizandoid.screens.VideosViewModel
+import com.borkor.shobizandoid.screens.common.SplashScreen
 import com.borkor.shobizandoid.ui.theme.ShowBizTheme
+import com.borkor.shobizandoid.utils.DataStatus
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
-import com.parse.ParseObject
-import com.parse.ParseQuery
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -36,25 +38,32 @@ class MainActivity : ComponentActivity() {
             .build()
         MobileAds.setRequestConfiguration(configuration)
 
-        val query = ParseQuery.getQuery<ParseObject>("AppSettings")
-        query.getInBackground("ZKFQGHhkn8") { appSettings, e ->
-            setContent {
-                ShowBizTheme {
-                    Surface(
-                        modifier = Modifier.fillMaxSize(),
-                        shape = RectangleShape
-                    ) {
-                        if (e == null) {
-                            // object will be your game score
-                            val flag = appSettings.getBoolean("flag")
-                            if (flag){
+        setContent {
+            ShowBizTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    shape = RectangleShape
+                ) {
+                    val parseFlag by viewModel.parseFlag.collectAsState()
+                    DisposableEffect(Unit) {
+                        viewModel.getParseFlag()
+                        onDispose {
+                        }
+                    }
+
+                    when (parseFlag.status){
+                        DataStatus.SUCCESS ->{
+                            if (parseFlag.data == true)
                                 MainScreen(viewModel)
-                            }else{
+                            else{
                                 ErrorScreen()
                             }
-
-                        } else {
+                        }
+                        DataStatus.ERROR ->{
                             ErrorScreen()
+                        }
+                        DataStatus.LOADING ->{
+                            SplashScreen()
                         }
                     }
                 }
