@@ -1,5 +1,7 @@
 package com.borkor.shobizandoid.di
 
+import com.borkor.shobizandoid.data.repository.FireStoreRepository
+import com.borkor.shobizandoid.data.repository.FireStoreRepositoryImpl
 import com.borkor.shobizandoid.data.repository.ParseRepository
 import com.borkor.shobizandoid.data.repository.ParseRepositoryImpl
 import com.borkor.shobizandoid.data.repository.YouTubeRepository
@@ -17,5 +19,8 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun bindParseRepository(parseRepositoryImpl: ParseRepositoryImpl): ParseRepository
+
+    @Binds
+    abstract fun bindFirebaseRepository(fireStoreRepositoryImpl: FireStoreRepositoryImpl): FireStoreRepository
 
 }

@@ -38,13 +38,14 @@ import androidx.tv.foundation.lazy.list.TvLazyRow
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.borkor.shobizandoid.R
+import com.borkor.shobizandoid.data.model.YoutubeVideo
 import com.borkor.shobizandoid.ui.theme.Gray93
 import com.borkor.shobizandoid.ui.theme.inriaSansFamily
 
 @Composable
 fun MoreVideosScreen(viewModel: VideosViewModel, navigateToYoutubeView: (string: String) -> Unit) {
 
-    val popularVideoList = viewModel.popularVideoList.collectAsLazyPagingItems()
+    val popularVideoList = viewModel.fireStoreVideoList.collectAsLazyPagingItems()
 
     DisposableEffect(true) {
         viewModel.getPopularVideoList()

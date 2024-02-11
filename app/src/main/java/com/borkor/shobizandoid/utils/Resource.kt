@@ -3,7 +3,8 @@ package com.borkor.shobizandoid.utils
 enum class DataStatus {
     SUCCESS,
     ERROR,
-    LOADING
+    LOADING,
+    NONE
 }
 
 
@@ -19,6 +20,10 @@ data class Resource<out T>(val status: DataStatus, val data: T?, val message: St
 
         fun <T> loading(): Resource<T> {
             return Resource(DataStatus.LOADING, null, null)
+        }
+
+        fun <T> none(): Resource<T> {
+            return Resource(DataStatus.NONE, null, null)
         }
     }
 }

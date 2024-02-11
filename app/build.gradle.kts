@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -110,7 +111,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation("com.google.accompanist:accompanist-webview:0.28.0")
     implementation("com.google.android.exoplayer:exoplayer:2.19.1")
-    implementation("androidx.navigation:navigation-compose:2.7.6")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 
 
     // Gson
@@ -134,13 +135,14 @@ dependencies {
     //dagger-hilt
     implementation("com.google.dagger:hilt-android:2.48")
     implementation("androidx.room:room-ktx:2.6.1")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.2")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
     //coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
     // Kotlin Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 
     //paging
     implementation ("androidx.paging:paging-compose:3.2.1")
@@ -159,10 +161,13 @@ dependencies {
 
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-storage")
+
     implementation ("com.google.android.gms:play-services-ads:22.6.0")
     implementation ("com.parse:parse-android:1.17.3")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")

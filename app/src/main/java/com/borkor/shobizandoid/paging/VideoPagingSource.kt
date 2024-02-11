@@ -4,13 +4,15 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.borkor.shobizandoid.data.api.YouTubeApi
 import com.borkor.shobizandoid.data.mappers.PopularVideoMapper
+import com.borkor.shobizandoid.data.model.YoutubeVideo
+import com.borkor.shobizandoid.data.repository.FireStoreRepository
 import com.borkor.shobizandoid.domain.model.PopularVideo
 import com.borkor.shobizandoid.domain.video.VideoPagingKey
 
 class VideoPagingSource(
     private val initialKey: VideoPagingKey,
     private val api: YouTubeApi,  // Replace with your YouTube API implementation
-    private val popularVideoMapper: PopularVideoMapper
+    private val popularVideoMapper: PopularVideoMapper,
 ) : PagingSource<String, PopularVideo.Item>() {
 
     override suspend fun load(params: LoadParams<String>): LoadResult<String, PopularVideo.Item> {
@@ -20,6 +22,7 @@ class VideoPagingSource(
                 maxResult = params.loadSize.toString(),
                 pageToken = nextPageToken,
             )
+
             return LoadResult.Page(
                 data = popularVideoMapper.mapAll(response.items),
                 prevKey = response.prevPageToken,  // Pagination in YouTube API doesn't support previous pages

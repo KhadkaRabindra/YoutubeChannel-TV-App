@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class YouTubeRepositoryImpl @Inject constructor(
     private var apiService: YouTubeApi,
-    private var popularVideoMapper: PopularVideoMapper
+    private var popularVideoMapper: PopularVideoMapper,
 ) : YouTubeRepository {
 
     override fun getPopularVideoPagingFlow(videoPagingKey: VideoPagingKey): Flow<PagingData<PopularVideo.Item>> {

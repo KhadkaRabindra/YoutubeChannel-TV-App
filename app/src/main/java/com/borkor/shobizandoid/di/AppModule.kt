@@ -1,8 +1,14 @@
 package com.borkor.shobizandoid.di
 
 import com.borkor.shobizandoid.BuildConfig
+import com.borkor.shobizandoid.core.Constants
 import com.borkor.shobizandoid.data.api.NetworkInterceptor
 import com.borkor.shobizandoid.data.api.YouTubeApi
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -55,5 +61,18 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(YouTubeApi::class.java)
+
+
+    @Provides
+    @Singleton
+    fun provideFireStore() = Firebase.firestore.collection(Constants.Firebase.YouTubeVideos)
+
+    /*@Provides
+    @Singleton
+    fun provideFirebaseDatabase() = FirebaseDatabase.getInstance().getReference(Constants.Firebase.YouTubeVideos)
+
+    @Provides
+    @Singleton
+    fun provideFirebaseStorage() = FirebaseStorage.getInstance().getReference(Constants.Firebase.YouTubeVideos)*/
 
 }

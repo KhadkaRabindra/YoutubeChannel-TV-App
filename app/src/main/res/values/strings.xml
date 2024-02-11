@@ -25,4 +25,11 @@
     <string name="back4app_client_key">250Ri8dpCFkVa98s4afFgXZnk0qaE15pNoFzws1H</string>
     <string name="back4app_server_url">https://parseapi.back4app.com/</string>
     <string name="error_message">Please check your internet connection and also make sure that date and time is correct .</string>
+    <string name="add_videos">Add Videos</string>
+    <string name="video_id">Video ID</string>
+    <string name="please_provide_video_id">Please provide video id.</string>
+    <string name="title">Title</string>
+    <string name="please_enter_title">Please enter title.</string>
+    <string name="image_url">Image URL</string>
+    <string name="please_enter_image_url">Please enter image URL.</string>
 </resources>

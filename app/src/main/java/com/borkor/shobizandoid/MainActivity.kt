@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Surface
 import com.borkor.shobizandoid.screens.ErrorScreen
+import com.borkor.shobizandoid.screens.FormView
 import com.borkor.shobizandoid.screens.MainScreen
 import com.borkor.shobizandoid.screens.VideosViewModel
 import com.borkor.shobizandoid.screens.common.SplashScreen
@@ -21,6 +22,7 @@ import com.borkor.shobizandoid.utils.DataStatus
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.Normalizer.Form
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -51,19 +53,26 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                    when (parseFlag.status){
-                        DataStatus.SUCCESS ->{
-                            if (parseFlag.data == true)
+                    when (parseFlag.status) {
+                        DataStatus.SUCCESS -> {
+                            if (parseFlag.data == true) {
                                 MainScreen(viewModel)
-                            else{
+                                //FormView(viewModel)
+                            } else {
                                 ErrorScreen()
                             }
                         }
-                        DataStatus.ERROR ->{
+
+                        DataStatus.ERROR -> {
                             ErrorScreen()
                         }
-                        DataStatus.LOADING ->{
+
+                        DataStatus.LOADING -> {
                             SplashScreen()
+                        }
+
+                        DataStatus.NONE -> {
+
                         }
                     }
                 }
