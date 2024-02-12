@@ -64,9 +64,9 @@ fun FormView(appViewModel: VideosViewModel) {
 
 @Composable
 fun AddYoutubeVideoScreen(appViewModel: VideosViewModel) {
-    var videoID by remember { mutableStateOf("SNLBEj5MHTo") }
-    var title by remember { mutableStateOf("RAP BASE") }
-    var imageURL by remember { mutableStateOf("https://i.ytimg.com/vi/SNLBEj5MHTo/default.jpg") }
+    var videoID by remember { mutableStateOf("") }
+    var title by remember { mutableStateOf("") }
+    var imageURL by remember { mutableStateOf("") }
 
     val videoIDErrorMessage = remember { mutableStateOf("") }
     val titleErrorMessage = remember { mutableStateOf("") }

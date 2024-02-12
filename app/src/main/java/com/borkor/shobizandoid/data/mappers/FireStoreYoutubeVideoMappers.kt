@@ -15,7 +15,7 @@ class FireStoreYoutubeVideoMappers @Inject constructor() :
             snippet = PopularVideo.Item.Snippet(
                 categoryId = "",
                 channelId = "",
-                channelTitle = input.title,
+                channelTitle = "",
 //                    defaultAudioLanguage = it?.snippet?.defaultAudioLanguage,
 //                    defaultLanguage = it?.snippet?.defaultLanguage,
                 description = "",
@@ -53,7 +53,7 @@ class FireStoreYoutubeVideoMappers @Inject constructor() :
                         url = ""
                     ),
                 ),
-                title = "",
+                title = input.title,
             )
         )
     }

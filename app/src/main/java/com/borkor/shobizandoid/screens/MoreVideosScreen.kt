@@ -133,10 +133,10 @@ fun MoreVideosScreen(viewModel: VideosViewModel, navigateToYoutubeView: (string:
             }
 
             is LoadState.Error -> {
-                item {
+                /*item {
                     Text(text = "Error")
                     //Text(text = (usersData.loadState.append as LoadState.Error).error.message.toString())
-                }
+                }*/
             }
         }
         when (popularVideoList.loadState.refresh) {
