@@ -1,4 +1,4 @@
-package com.tastyworks.app.scenes.home
+package com.borkor.shobizandoid.screens
 
 /*
 import android.content.res.Configuration
