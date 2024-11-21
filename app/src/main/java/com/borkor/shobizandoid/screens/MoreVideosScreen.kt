@@ -11,15 +11,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,7 +35,6 @@ import androidx.tv.foundation.lazy.list.TvLazyRow
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.borkor.shobizandoid.R
-import com.borkor.shobizandoid.data.model.YoutubeVideo
 import com.borkor.shobizandoid.ui.theme.Gray93
 import com.borkor.shobizandoid.ui.theme.inriaSansFamily
 
@@ -67,7 +63,7 @@ fun MoreVideosScreen(viewModel: VideosViewModel, navigateToYoutubeView: (string:
                         .wrapContentHeight()
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
-                            indication = rememberRipple(color = Color.Blue)
+                            indication = ripple(color = Color.Blue)
                         ) {
                             if (it.id?.isNotEmpty() == true)
                                 navigateToYoutubeView(it.id)
