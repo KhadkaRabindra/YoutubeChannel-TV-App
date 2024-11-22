@@ -16,12 +16,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -105,7 +105,7 @@ fun MainScreen(videoViewModel: VideosViewModel) {
                                             .padding(start = 40.dp)
                                             .clickable(
                                                 interactionSource = remember { MutableInteractionSource() },
-                                                indication = rememberRipple(color = Color.Blue)
+                                                indication = ripple(color = Color.Blue)
                                             ) {
                                                 if (it.route == Screens.SystemUpdateScreen.route) {
                                                     context.openAppPlayStore()

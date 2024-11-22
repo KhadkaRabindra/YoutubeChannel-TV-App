@@ -1,5 +1,9 @@
 package com.borkor.shobizandoid.di
 
+import com.borkor.shobizandoid.data.repository.FireStoreRepository
+import com.borkor.shobizandoid.data.repository.FireStoreRepositoryImpl
+import com.borkor.shobizandoid.data.repository.ParseRepository
+import com.borkor.shobizandoid.data.repository.ParseRepositoryImpl
 import com.borkor.shobizandoid.data.repository.YouTubeRepository
 import com.borkor.shobizandoid.data.repository.YouTubeRepositoryImpl
 import dagger.Binds
@@ -12,4 +16,11 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
     @Binds
     abstract fun bindUserRepository(youTubeRepositoryImpl: YouTubeRepositoryImpl): YouTubeRepository
+
+    @Binds
+    abstract fun bindParseRepository(parseRepositoryImpl: ParseRepositoryImpl): ParseRepository
+
+    @Binds
+    abstract fun bindFirebaseRepository(fireStoreRepositoryImpl: FireStoreRepositoryImpl): FireStoreRepository
+
 }

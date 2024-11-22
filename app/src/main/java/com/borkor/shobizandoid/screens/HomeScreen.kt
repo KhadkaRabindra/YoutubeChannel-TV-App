@@ -14,10 +14,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -90,7 +90,7 @@ fun HomeScreen(
                                 .padding(start = 30.dp, end = 30.dp)
                                 .clickable(
                                     interactionSource = remember { MutableInteractionSource() },
-                                    indication = rememberRipple(color = Color.Blue)
+                                    indication = ripple(color = Color.Blue)
                                 ) {
                                     navigateToWebView()
                                 },
@@ -173,7 +173,7 @@ fun TopAppBar(onSettingIconClick: () -> Unit) {
                 .height(37.dp)
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
-                    indication = rememberRipple(color = Color.Blue)
+                    indication = ripple(color = Color.Blue)
                 ) {
                     onSettingIconClick()
                 }
