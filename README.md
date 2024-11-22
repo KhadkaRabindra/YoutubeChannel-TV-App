@@ -2,6 +2,10 @@
 
 A sample Android app that demonstrates the use of the YouTube Data API v3. This app allows you to convert your YouTube channel into a native Android app, fetching the latest videos and listing all the playlists from your channel. The app provides an easy way to display your content in a mobile format.
 
+## Screenshots 📸
+![Screenshot_1732280310](https://github.com/user-attachments/assets/50084b6b-0934-4b89-beb9-cdbd10b2abb8)
+
+
 ## Features 📱
 
 * Latest Videos: Displays the most recent videos from your YouTube channel.
@@ -49,9 +53,9 @@ Once you've added your API key and channel ID, sync the project and build it. Yo
 
 ## Prerequisites 🛠️
 
-Android Studio (latest stable version)
-Gradle (ensure it's up to date)
-YouTube Data API v3 key
+* Android Studio (latest stable version)
+* Gradle (ensure it's up to date)
+* YouTube Data API v3 key
 ## Technologies Used 🖥️
 
 * Android: Native Android development
@@ -63,11 +67,11 @@ YouTube Data API v3 key
 
 We welcome contributions! To contribute, follow these steps:
 
-Fork the repository.
-Create a new branch for your changes.
-Make your changes and test them.
-Submit a pull request with a detailed description of your changes.
-Please make sure your code follows the project's coding style and includes any necessary tests.
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and test them.
+4. Submit a pull request with a detailed description of your changes.
+5. Please make sure your code follows the project's coding style and includes any necessary tests.
 
 ## License 📜
 
