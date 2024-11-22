@@ -34,7 +34,7 @@ Open build.gradle (Module: app) and add your API key in the defaultConfig sectio
 ```
 defaultConfig {
     ...
-    resValue "string", "youtube_api_key", "<YOUR_YOUTUBE_API_KEY>"
+    resValue "string", "YOUTUBE_API_KEY", "<YOUR_YOUTUBE_API_KEY>"
 }
 ```
 
@@ -44,7 +44,7 @@ To change the default YouTube channel in the app, replace the YouTube channel ID
 ```
 defaultConfig {
     ...
-    resValue "string", "youtube_channel_id", "<YOUR_CHANNEL_ID>"
+    resValue "string", "YOUTUBE_CHANNEL_ID", "<YOUR_CHANNEL_ID>"
 }
 ```
 
