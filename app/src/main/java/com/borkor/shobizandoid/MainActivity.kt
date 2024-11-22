@@ -45,7 +45,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     shape = RectangleShape
                 ) {
-                    val parseFlag by viewModel.parseFlag.collectAsState()
+                    MainScreen(viewModel)
+                    /*val parseFlag by viewModel.parseFlag.collectAsState()
                     DisposableEffect(Unit) {
                         viewModel.getParseFlag()
                         onDispose {
@@ -73,7 +74,7 @@ class MainActivity : ComponentActivity() {
                         DataStatus.NONE -> {
 
                         }
-                    }
+                    }*/
                 }
             }
         }
