@@ -34,12 +34,12 @@ android {
             buildConfigField(
                 type = "String",
                 name = "YOUTUBE_API_KEY",
-                value = "\"your-api-key-here\""
+                value = "\"<YOUR_YOUTUBE_API_KEY>\""
             )
             buildConfigField(
                 type = "String",
                 name = "YOUTUBE_CHANNEL_ID",
-                value = "\"your-youtube-channel-id-here\""
+                value = "\"<YOUR_CHANNEL_ID>\""
             )
             isMinifyEnabled = false
             proguardFiles(
