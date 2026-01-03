@@ -20,7 +20,7 @@ fun WebViewScreen() {
     var webPageTitle by remember { mutableStateOf("") }
     val webViewState = rememberWebViewState(url = Urls.showbizTV)
     val chromeClient = object : AccompanistWebChromeClient() {
-        override fun onReceivedTitle(view: WebView?, title: String?) {
+        override fun onReceivedTitle(view: WebView, title: String?) {
             webPageTitle = title ?: ""
             super.onReceivedTitle(view, title)
         }

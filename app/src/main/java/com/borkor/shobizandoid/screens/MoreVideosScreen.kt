@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
@@ -31,7 +32,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import androidx.tv.foundation.lazy.list.TvLazyRow
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.borkor.shobizandoid.R
@@ -48,7 +48,7 @@ fun MoreVideosScreen(viewModel: VideosViewModel, navigateToYoutubeView: (string:
         onDispose {}
     }
 
-    TvLazyRow(
+    LazyRow(
         modifier = Modifier
             .fillMaxSize(),
         contentPadding = PaddingValues(all = 30.dp),
